@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES EFREN'S RESTAURANT</title>
+    <link rel="stylesheet" href="foods.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"> <a href="#">YES EFREN'S RESTAURANT</a></div>
+       <ul class="links">
+        <li> <a href="quiz.html">Home</a></li>
+        <li> <a href="quiz.html">About</a></li>
+        <li> <a href="#">Food</a></li>
+        <li> <a href="quiz.html">Contacts</a></li>
+       </ul>
+       </div>
+    </div>
+
+    <div class="menu">
+        <h1>Main <span>Menu</span></h1>
+    </div>
+
+<div class="menu_box">
+        <div class="item" onclick="showDetails('item1')">
+            <img src="y1.png" alt="Item 1">
+            <p>YES MEAL 1</p>
+        </div>
+    
+        <div class="item" onclick="showDetails('item2')">
+            <img src="y2.png" alt="Item 2">
+            <p>YES MEAL 2</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item3')">
+            <img src="y3.png" alt="Item 3">
+            <p>YES MEAL 3</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item4')">
+            <img src="/y4.png" alt="Item 4">
+            <p>YES MEAL 4</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item5')">
+            <img src="y5.png" alt="Item 5">
+            <p>YES MEAL 5</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item6')">
+            <img src="y6.png" alt="Item 6">
+            <p>YES MEAL 6</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item7')">
+            <img src="y7.png" alt="Item 7">
+            <p>YES MEAL 7</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item8')">
+            <img src="y8.png" alt="Item 8">
+            <p>YES MEAL 8</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item9')">
+            <img src="y9.png" alt="Item 9">
+            <p>YES MEAL 9</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item10')">
+            <img src="y10.png" alt="Item 10">
+            <p>YES MEAL 10</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item11')">
+            <img src="y11.png" alt="Item 11">
+            <p>YES MEAL 11</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item12')">
+            <img src="y12.png" alt="Item 12">
+            <p>YES MEAL 12</p>
+        </div>
+
+        <div class="item" onclick="showDetails('item13')">
+            <img src="y13.png" alt="Item 13">
+            <p>YES MEAL 13</p>
+        </div>
+</div>
+
+<div id="details" class="items">
+    <span class="close" onclick="hideDetails()">&times;</span>
+    <img id="detailImage" src="" alt="">
+    <h2 id="detailName"></h2>
+    <p id="detailPrice"></p>
+    <p id="detailDetails"></p>
+
+</div>
+
+
+    <script>
+        const details = document.getElementById('details');
+        const detailImage = document.getElementById('detailImage');
+        const detailName = document.getElementById('detailName');
+        const detailPrice = document.getElementById('detailPrice');
+        const detailDetails = documet.getElementById('detailDetails');
+
+        const items = {
+            item1: { 
+                imgsrc: 'y1.png', 
+                name: 'YES MEAL 1', 
+                details: '1 BBQ with  Java Rice',
+                price: '₱95.00' 
+            },
+            item2: { 
+                imgsrc: 'y2.png', 
+                name: 'YES MEAL 2', 
+                details: '2 BBQ with  Java Rice',
+                price: '₱139.00' 
+            },
+            item3: { 
+                src: 'y3.png', 
+                name: 'YES MEAL 3', 
+                details: '1 BBQ + 1 Hotdog with  Java Rice',
+                price: '₱129.00' 
+            },
+            item4: { 
+                src: 'y4.png', 
+                name: 'YES MEAL 4', 
+                details: '1 BBQ + 1 Tenga with  Java Rice',
+                price: '₱129.00' 
+            },
+            item5: { 
+                src: 'y5.png', 
+                name: 'YES MEAL 5',
+                details: '1 BBQ + 1 Isaw Baboy with  Java Rice', 
+                price: '₱129.00' 
+            },
+            item6: { 
+                src: 'y6.png', 
+                name: 'YES MEAL 6', 
+                details: '1 BBQ + 1 Isaw Manok with  Java Rice',
+                price: '₱129.00' 
+            },
+            item7: { 
+                src: 'y7.png', 
+                name: 'YES WITH FRIENDS', 
+                details: '1 BBQ + 1 Isaw Manok + 1 Tenga + 1 Isaw Baboy + Hotdog',
+                price: '₱235.00' 
+            },
+            item8: { 
+                src: 'y8.png', 
+                name: 'YES MEAL 8',
+                details: 'Inihaw na Liempo with Java Rice',
+                price: '₱229.00' 
+            },
+            item9: { 
+                src: 'y9.png', 
+                name: 'YES MEAL 9', 
+                details: 'Chicken BBQ (Leg Quarter) with Java Rice',
+                price: '₱175.00' 
+            },
+            item10: { 
+                src: 'y10.png', 
+                name: 'YES MEAL 10', 
+                details: 'Inihaw na Porkchop with Java Rice',
+                price: '₱125.00' 
+            },
+            item11: { 
+                src: 'y11.png', 
+                name: 'YES MEAL 11', 
+                details: '1 BBQ + Isaw Bilog with Java Rice',
+                price: '₱135.00' 
+            },
+            item12: { 
+                src: 'y12.png', 
+                name: 'YES WITH SUPER FRIENDS', 
+                details: '1 BBQ + 1 Isaw Manok + 1 Tenga + 1 Isaw Baboy + 1 Isaw Bilog + 1 Hotdog with Java Rice',
+                price: '₱269.00' 
+            },
+            item13: { 
+                src: 'y13.png', 
+                name: 'YES MEAL 13', 
+                details: '1 BBQ + Bulaklak with Java Rice',
+                price: '₱129.00' 
+            }
+        };
+
+        function showDetails(itemId) {
+            const item = items[itemId];
+            detailImage.src = item.src;
+            detailName.textContent = item.name;
+            detailDetails.textContent = item.details;
+            detailPrice.textContent = item.price;
+            details.style.display = 'flex';
+        }
+
+        function hideDetails() {
+            details.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
